@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Gestão</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Painel de Gestão</h1>
+      <h2>Cidade Ocidental (GO) | Gestão: Luiz Gonzaga Viana Filho</h2>
+    </header>
+
+    <!-- Abas de Navegação -->
+    <nav class="tabs">
+      <button class="tab-button active" data-tab="geral">Visão Geral</button>
+      <button class="tab-button" data-tab="saude">Saúde</button>
+      <button class="tab-button" data-tab="educacao">Educação</button>
+      <button class="tab-button" data-tab="financas">Finanças</button>
+      <button class="tab-button" data-tab="saneamento">Saneamento</button>
+    </nav>
+
+    <!-- Painel de Conteúdo -->
+    <main class="content">
+
+      <!-- Página: Visão Geral -->
+      <section id="geral" class="tab-content active">
+        <div class="card-grid">
+          <div class="card"><h3>População</h3><p>91.767</p></div>
+          <div class="card"><h3>Educação Infantil</h3><p>89,5%</p></div>
+          <div class="card"><h3>Água</h3><p>62,95%</p></div>
+          <div class="card"><h3>Esgoto</h3><p>38,61%</p></div>
+          <div class="card"><h3>Receita 2024</h3><p>R$ 194,1 mi</p></div>
+          <div class="card"><h3>PSF (Saúde)</h3><p>R$ 1,6 mi</p></div>
+        </div>
+        <div class="insight">
+          <h4>📌 Insight</h4>
+          <p>Cidade Ocidental tem cobertura plena da Estratégia Saúde da Família, mas enfrenta desafios críticos em saneamento: apenas 38,6% da população tem acesso a esgoto tratado. A educação básica está bem estruturada, com alta cobertura na infância e ensino fundamental.</p>
+        </div>
+      </section>
+
+      <!-- Página: Saúde -->
+      <section id="saude" class="tab-content">
+        <canvas id="graficoSaude" height="100"></canvas>
+        <canvas id="graficoVacinas" height="100"></canvas>
+        <div class="insight">
+          <h4>📌 Insight</h4>
+          <p>O PSF é o maior programa em recursos (R$ 1,6 mi em 2024). Vacinas como Hepatite B em recém-nascidos estão abaixo do ideal (69%), exigindo campanhas de busca ativa.</p>
+        </div>
+      </section>
+
+      <!-- Página: Educação -->
+      <section id="educacao" class="tab-content">
+        <canvas id="graficoEducacao" height="100"></canvas>
+        <div class="card-grid">
+          <div class="card"><h3>Infantil</h3><p>89,5%</p></div>
+          <div class="card"><h3>Anos Iniciais</h3><p>91,5%</p></div>
+          <div class="card"><h3>Anos Finais</h3><p>84,5%</p></div>
+          <div class="card"><h3>EJA</h3><p>70,7%</p></div>
+        </div>
+        <div class="insight">
+          <h4>📌 Insight</h4>
+          <p>A rede atende bem na infância, mas há evasão nos Anos Finais e baixa cobertura na EJA. Recomenda-se política de reintegração escolar.</p>
+        </div>
+      </section>
+
+      <!-- Página: Finanças -->
+      <section id="financas" class="tab-content">
+        <canvas id="graficoFinancas" height="100"></canvas>
+        <div class="insight">
+          <h4>📌 Insight</h4>
+          <p>O município depende fortemente do FPM (34%) e FUNDEB (60% da educação). O crescimento até 2024 é positivo, mas a queda projetada em 2025 exige planejamento fiscal antecipado.</p>
+        </div>
+      </section>
+
+      <!-- Página: Saneamento -->
+      <section id="saneamento" class="tab-content">
+        <canvas id="graficoSaneamento" height="100"></canvas>
+        <div class="insight">
+          <h4>📌 Insight</h4>
+          <p>Menos de 40% da população tem acesso a esgoto tratado. É urgente ampliar a parceria com a SANEAGO e pleitear recursos federais para universalização do saneamento.</p>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>© 2025 - Prefeitura de Cidade Ocidental (GO) | Dados: Power BI, Fundo Municipal de Saúde</p>
+    </footer>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
